@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Antonio</title>
+  
+  <subtitle>Antonio</subtitle>
+  <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://antoniozc666.github.io/"/>
+  <updated>2024-04-06T03:00:26.634Z</updated>
+  <id>https://antoniozc666.github.io/</id>
+  
+  <author>
+    <name>Antonio</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>欢迎使用Hexo</title>
+    <link href="https://antoniozc666.github.io/2024/04/06/huan-ying-shi-yong-hexo/"/>
+    <id>https://antoniozc666.github.io/2024/04/06/huan-ying-shi-yong-hexo/</id>
+    <published>2024-04-06T03:00:45.316Z</published>
+    <updated>2024-04-06T03:00:26.634Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="https://antoniozc666.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NEMO海洋模型的安装、搭建与运行</title>
+    <link href="https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/"/>
+    <id>https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/</id>
+    <published>2024-04-02T10:53:47.000Z</published>
+    <updated>2024-04-02T13:40:56.353Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;笔者在安装构建NEMO（&lt;strong&gt;N&lt;/strong&gt;ucleus for&lt;strong&gt;E&lt;/strong&gt;uropean&lt;strong&gt;M&lt;/strong&gt;odelling of</summary>
+        
+      
+    
+    
+    
+    <category term="系统性能优化" scheme="https://antoniozc666.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+    <category term="HPC" scheme="https://antoniozc666.github.io/tags/HPC/"/>
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    <category term="分布式" scheme="https://antoniozc666.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+    <category term="环境搭建" scheme="https://antoniozc666.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IntelliJ IDEA 常用快捷键一览表</title>
+    <link href="https://antoniozc666.github.io/2024/04/02/intellij-idea-chang-yong-kuai-jie-jian-yi-lan-biao/"/>
+    <id>https://antoniozc666.github.io/2024/04/02/intellij-idea-chang-yong-kuai-jie-jian-yi-lan-biao/</id>
+    <published>2024-04-02T08:31:31.000Z</published>
+    <updated>2024-04-02T11:08:49.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-IDEA的日常快捷键&quot;&gt;&lt;a href=&quot;#1-IDEA的日常快捷键&quot; class=&quot;headerlink&quot; title=&quot;1-IDEA的日常快捷键&quot;&gt;&lt;/a&gt;&lt;strong&gt;1-IDEA的日常快捷键&lt;/strong&gt;&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://antoniozc666.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDE" scheme="https://antoniozc666.github.io/tags/IDE/"/>
+    
+    <category term="IntelliJ IDEA" scheme="https://antoniozc666.github.io/tags/IntelliJ-IDEA/"/>
+    
+    <category term="快捷键" scheme="https://antoniozc666.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+</feed>

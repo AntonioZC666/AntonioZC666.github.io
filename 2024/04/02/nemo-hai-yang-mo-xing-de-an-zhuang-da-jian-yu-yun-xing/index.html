@@ -1,0 +1,1411 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="NEMO海洋模型的安装、搭建与运行, 系统性能, 软硬件协同优化, Java">
+    <meta name="description" content="Antonio的个人博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>NEMO海洋模型的安装、搭建与运行 | Antonio</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Antonio" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Antonio</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Antonio</div>
+        <div class="logo-desc">
+            
+            Antonio的个人博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/BlankSpacePlus" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Follow Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/BlankSpacePlus" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">NEMO海洋模型的安装、搭建与运行</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/HPC/">
+                                <span class="chip bg-color">HPC</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/">
+                                <span class="chip bg-color">工作负载</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                                <span class="chip bg-color">分布式</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">环境搭建</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                系统性能优化
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-04-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-04-02
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>笔者在安装构建NEMO（<strong>N</strong>ucleus for<strong>E</strong>uropean<strong>M</strong>odelling of the<strong>O</strong>cean）的时候苦于资料太少，花费了不少时间和精力，踩了不少坑。因此笔者将安装过程进行总结，以供大家参考。</p>
+<h2 id="1-系统信息"><a href="#1-系统信息" class="headerlink" title="1. 系统信息"></a>1. 系统信息</h2><p>OS信息：Linux black 5.15.0-89-generic #99-Ubuntu x86_64 GNU/Linux</p>
+<p>安装路径：软件安装包放在： /home/czhang/softwarepkg</p>
+<p>相关依赖软件安装在：/home/czhang/local</p>
+<p>NEMO安装在：/home/czhang/NEMO</p>
+<p>XIOS安装在：/home/czhang/xios</p>
+<blockquote>
+<p>各软件安装版本如下：<br>curl-7.81.0<br>hdf5-1.14.3<br>mpich-4.2.0<br>netcdf-c-4.7.4<br>netcdf-fortran-4.5.3<br>pnetcdf-1.12.3<br>szip-2.1.1<br>zlib-1.2.11</p>
+</blockquote>
+<h2 id="2-安装MPICH"><a href="#2-安装MPICH" class="headerlink" title="2. 安装MPICH"></a>2. 安装MPICH</h2><p>在/home/czhang/local下创建mpich文件夹</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf mpich-4.2.0.tar.gz
+$ <span class="token builtin class-name">cd</span> mpich-4.2.0
+$ ./configure –prefix<span class="token operator">=</span>/home/czhang/local/mpich
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>安装后需要将mpich的相应路径添加到环境变量当中。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span>/home/czhang/local/mpich/lib
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/home/czhang/local/mpich/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>也可以在.bashrc中，添加随后 source ~/.bashrc</p>
+<h2 id="3-安装NetCDF"><a href="#3-安装NetCDF" class="headerlink" title="3. 安装NetCDF"></a>3. 安装NetCDF</h2><p>在/home/czhang/local下创建netcdf文件夹。安装的每一个依赖软件均需在其源代码目录下进行</p>
+<h3 id="1-安装zlib"><a href="#1-安装zlib" class="headerlink" title="(1)安装zlib"></a>(1)安装zlib</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf zlib-1.2.11.tar.gz
+$ <span class="token builtin class-name">cd</span> zlib-1.2.11
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-安装szip"><a href="#2-安装szip" class="headerlink" title="(2)安装szip"></a>(2)安装szip</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf szip-2.1.1.tar.gz
+$ <span class="token builtin class-name">cd</span> szip-2.1.1
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-安装curl"><a href="#3-安装curl" class="headerlink" title="(3)安装curl"></a>(3)安装curl</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf curl-7.81.0.tar.gz
+$ <span class="token builtin class-name">cd</span> curl-7.81.0
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf -with-openssl    <span class="token comment"># 这里要看自己系统上用的什么ssl</span>
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-安装HDF5"><a href="#4-安装HDF5" class="headerlink" title="(4)安装HDF5"></a>(4)安装HDF5</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf hdf5-1.14.3.tar.gz
+$ <span class="token builtin class-name">cd</span> hdf5-1.14.3
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">CPPFLAGS</span><span class="token operator">=</span>-I /home/czhang/local/netcdf/include
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span>-L /home/czhang/local/netcdf/lib
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span>/home/czhang/local/netcdf/lib
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf --enable-parallel --enable-fortran
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-安装PNetCDF"><a href="#5-安装PNetCDF" class="headerlink" title="(5)安装PNetCDF"></a>(5)安装PNetCDF</h3><p>在/home/czhang/local下创建pnetcdf文件夹，pnetcdf安装在该文件夹中</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf pnetcdf-1.12.3.tar.gz
+$ <span class="token builtin class-name">cd</span> pnetcdf-1.12.3
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/pnetcdf --enable-fortran --enable-large-file-test --enable-shared
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-安装NetCDF-C"><a href="#6-安装NetCDF-C" class="headerlink" title="(6)安装NetCDF-C"></a>(6)安装NetCDF-C</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf netcdf-c-4.7.4.tar.gz
+$ <span class="token builtin class-name">cd</span> netcdf-c-4.7.4
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf --enable-pnetcdf --enable-large-file-tests --enable-largefile  --enable-parallel-tests --enable-shared  --with-pic --disable-doxygen  --enable-netcdf-4     
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功后会有 congratulations</p>
+<h3 id="7-安装NetCDF-Fortran"><a href="#7-安装NetCDF-Fortran" class="headerlink" title="(7)安装NetCDF-Fortran"></a>(7)安装NetCDF-Fortran</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tar</span> -zxvf netcdf-fortran-4.5.3.tar.gz     <span class="token comment"># 注意：该版本需要netcdf-c在4.7.4及以上</span>
+$ <span class="token builtin class-name">cd</span> netcdf-fortran-4.5.3
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">LIBS</span><span class="token operator">=</span>-lnetcdf
+$ ./configure --prefix<span class="token operator">=</span>/home/czhang/local/netcdf --disable-static --enable-shared --with-pic --enable-parallel-tests --enable-large-file-tests --enable-largefile           
+$ <span class="token function">make</span>
+$ <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功后会有 congratulations</p>
+<p><strong>安装完成后需要配置环境变量</strong>，笔者在 .bashrc 文件添加的内容如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">DIR</span><span class="token operator">=</span>/home/czhang/local
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NETCDF</span><span class="token operator">=</span><span class="token variable">$DIR</span>/netcdf
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">MPI</span><span class="token operator">=</span><span class="token variable">$DIR</span>/mpich
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PNETCDF</span><span class="token operator">=</span><span class="token variable">$DIR</span>/pnetcdf
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CPPFLAGS</span><span class="token operator">=</span><span class="token string">"-I<span class="token variable">$MPI</span>/include -I<span class="token variable">$NETCDF</span>/include -I<span class="token variable">$PNETCDF</span>/include"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$LDFLAGS</span> -L<span class="token variable">$NETCDF</span>/lib -L<span class="token variable">$MPI</span>/lib -L<span class="token variable">$PNETCDF</span>/lib -I<span class="token variable">$NETCDF</span>/include"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FCFLAGS</span><span class="token operator">=</span><span class="token string">"-fallow-argument-mismatch"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FFLAGS</span><span class="token operator">=</span><span class="token string">"-I<span class="token variable">$MPI</span>/include -L<span class="token variable">$MPI</span>/lib -I<span class="token variable">$NETCDF</span>/include -fallow-argument-mismatch"</span>
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NCDF_F_HOME</span><span class="token operator">=</span><span class="token variable">$NETCDF</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NCDF_C_HOME</span><span class="token operator">=</span><span class="token variable">$NETCDF</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">HDF5_HOME</span><span class="token operator">=</span><span class="token variable">$NETCDF</span>
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable">$MPI</span>/lib:<span class="token variable">$NETCDF</span>/lib:<span class="token variable">$PNETCDF</span>/lib:<span class="token variable">$LD_LIBRARY_PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$MPI</span>/bin:<span class="token variable">$NETCDF</span>/bin:<span class="token variable">$NETCDF</span>/include
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CC</span><span class="token operator">=</span>mpicc <span class="token comment">#gcc</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CXX</span><span class="token operator">=</span>mpicxx     <span class="token comment">#g++</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FC</span><span class="token operator">=</span>mpif90     <span class="token comment">#gfortran</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FCFLAGS</span><span class="token operator">=</span><span class="token string">"-m64 <span class="token variable">$FCFLAGS</span>"</span> 
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">F77</span><span class="token operator">=</span>mpif77    <span class="token comment">#gfortran</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FFLAGS</span><span class="token operator">=</span><span class="token string">"-m64 <span class="token variable">$FFLAGS</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>配置好了之后，检查一下版本和路径</p>
+<h2 id="4-安装XIOS"><a href="#4-安装XIOS" class="headerlink" title="4. 安装XIOS"></a>4. 安装XIOS</h2><p>提取并解析XIOS源代码，并将安装文件夹命名为xios。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS2/trunk xios<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在 xios/arch 目录下找到相应的架构配置文件并修改。笔者这里是用的GCC_LINUX，需要修改 .path, .env, .fcm 文件。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># arch-GCC_LINUX.env
+
+export HDF5_INC_DIR=$HOME/local/netcdf/include          #根据自己情况修改
+export HDF5_LIB_DIR=$HOME/local/netcdf/lib              #根据自己情况修改
+
+export NETCDF_INC_DIR=$HOME/local/netcdf/include        #根据自己情况修改
+export NETCDF_LIB_DIR=$HOME/local/netcdf/lib            #根据自己情况修改
+
+export BOOST_INC_DIR=$HOME/boost
+export BOOST_LIB_DIR=$HOME/boost<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>具体路径需要根据自己的安装路径做相应修改。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># arch-GCC_LINUX.fcm
+
+################################################################################
+###################                Projet XIOS               ###################
+################################################################################
+
+%CCOMPILER      /home/czhang/local/mpich/bin/mpicc       #根据自己情况修改
+%FCOMPILER      /home/czhang/local/mpich/bin/mpif90      #根据自己情况修改
+%LINKER         /home/czhang/local/mpich/bin/mpif90      #根据自己情况修改
+
+%BASE_CFLAGS    -w -std=c++11 -D__XIOS_EXCEPTION -D_GLIBCXX_USE_CXX11_ABI=0 -ffree-line-length-none   #这个标志需要在原基础上添加一些东西
+%PROD_CFLAGS    -O3 -DBOOST_DISABLE_ASSERTS
+%DEV_CFLAGS     -g -O2
+%DEBUG_CFLAGS   -g
+
+%BASE_FFLAGS    -D__NONE__
+%PROD_FFLAGS    -O3
+%DEV_FFLAGS     -g -O2
+%DEBUG_FFLAGS   -g
+
+%BASE_INC       -D__NONE__
+%BASE_LD        -lstdc++
+
+%CPP            cpp
+%FPP            cpp -P
+%MAKE           make<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>具体路径需要根据自己的安装路径做相应修改，FLAGS按照上述修改即可。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># arch-GCC_LINUX.path
+
+NETCDF_INCDIR="-I $NETCDF_INC_DIR"
+NETCDF_LIBDIR="-L $NETCDF_LIB_DIR"
+NETCDF_LIB="-lnetcdff -lnetcdf"
+
+MPI_INCDIR=""
+MPI_LIBDIR=""
+MPI_LIB=""
+
+HDF5_INCDIR="-I $HDF5_INC_DIR"
+HDF5_LIBDIR="-L $HDF5_LIB_DIR"
+HDF5_LIB="-lhdf5_hl -lhdf5 -lhdf5 -lz"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>以上只展示到了 HDF5 的设置，后面的不用改变。去除 lcurl 标志即可。</p>
+<p>配置完成后就可以在xios源代码目录下进行编译了。输入命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./make_xios --full --arch GCC_LINUX -j <span class="token number">160</span> <span class="token operator">|&amp;</span> <span class="token function">tee</span> compile_log.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选用GCC_LINUX架构配置进行编译。-j 表示使用多少个线程进行编译，tee compile_log.txt 表示将编译产生的信息存储在txt文件中，这是为了出问题时方便查看。</p>
+<p>XIOS编译的时间很长，同时编译完成后不会有成功或恭喜信息，看到 finished 并且没有 error 报错就说明完成了。</p>
+<h2 id="5-安装并编译NEMO"><a href="#5-安装并编译NEMO" class="headerlink" title="5. 安装并编译NEMO"></a>5. 安装并编译NEMO</h2><p>创建NEMO文件夹，并将压缩包解压。编译NEMO之前同样需要修改架构配置文件。笔者这里使用的是linux_gfortran架构</p>
+<p>在arch文件夹下找到 arch-linux_gfortran.fcm文件并修改</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">%NCDF_HOME           /home/czhang/local/netcdf
+%HDF5_HOME           /home/czhang/local/netcdf
+%NCDF_C_HOME         /home/czhang/local/netcdf
+%NCDF_F_HOME         /home/czhang/local/netcdf
+%XIOS_HOME           /home/czhang/xios
+
+%NCDF_INC            -I%NCDF_F_HOME/include -I%NCDF_C_HOME/include -I%HDF5_HOME/include
+%NCDF_LIB            -L%NCDF_F_HOME/lib -lnetcdff -L%NCDF_C_HOME/lib -lnetcdf -lstdc++
+%XIOS_INC            -I%XIOS_HOME/inc
+%XIOS_LIB            -L%XIOS_HOME/lib -lxios -lstdc++
+
+%OASIS_INC           -I%OASIS_HOME/build/lib/mct -I%OASIS_HOME/build/lib/psmile.MPI1
+%OASIS_LIB           -L%OASIS_HOME/lib -lpsmile.MPI1 -lmct -lmpeu -lscrip
+
+%CPP	             cpp -Dkey_nosignedzero
+%FC	             mpif90 -c -cpp
+%FCFLAGS             -I/home/czhang/local/netcdf/include $(FCFLAGS) -fdefault-real-8 -O3 -funroll-all-loops -fcray-pointer -ffree-line-length-none -fallow-argument-mismatch -cpp
+%FFLAGS              %FCFLAGS
+%LD                  mpif90
+%LDFLAGS
+%FPPFLAGS            -P -C -traditional
+%AR                  ar
+%ARFLAGS             rs
+%MK                  make
+%USER_INC            %XIOS_INC %NCDF_INC
+%USER_LIB            %XIOS_LIB %NCDF_LIB
+
+%CC                  cc
+%CFLAGS              -O0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在该配置文件中需要指明netcdf，hdf5，xios的路径</p>
+<p>之后就可以进行NEMO 的编译。在源代码根目录进行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./makenemo -m linux_gfortran -r GYRE_PISCES -n test1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>之后就可以在cfgs文件夹下看到test1文件夹，其中包含 BLD, EXP00, MY_SRC, WORK, cpp_test1.fcm，在EXP00文件夹下有nemo执行程序</p>
+<h2 id="6-运行NEMO"><a href="#6-运行NEMO" class="headerlink" title="6. 运行NEMO"></a>6. 运行NEMO</h2><p>在EXP00文件夹下，有一些初始化的输入文件（namelist，用于输入的*.xml文件等），如果需要使用其他输入文件需要将他们放在这个文件夹中</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> cfgs/test1/EXP00/         <span class="token comment"># 进入EXP00文件夹中</span>
+$ mpirun -n <span class="token variable">$NPROCS</span> ./nemo     <span class="token comment"># $NPROCS 是指要运行的线程数 ， mpirun是自己系统的MPI的封装接口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="7-对于NEMO的一些配置"><a href="#7-对于NEMO的一些配置" class="headerlink" title="7. 对于NEMO的一些配置"></a>7. 对于NEMO的一些配置</h2><h3 id="7-1-更改输入输出文件路径"><a href="#7-1-更改输入输出文件路径" class="headerlink" title="7.1 更改输入输出文件路径"></a>7.1 更改输入输出文件路径</h3><p>在<strong>namelist_ref</strong>文件中</p>
+<pre class="line-numbers language-fortran" data-language="fortran"><code class="language-fortran">cn_ocerst_indir <span class="token operator">=</span> <span class="token string">"./input"</span>         <span class="token comment">!  directory from which to read input ocean restarts</span>
+cn_ocerst_outdir <span class="token operator">=</span> <span class="token string">"./output_ocean_restart"</span>        <span class="token comment">!  directory in which to write output ocean restarts</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在<strong>namelist_top_ref</strong>文件中</p>
+<pre class="line-numbers language-fortran" data-language="fortran"><code class="language-fortran">cn_trcrst_outdir <span class="token operator">=</span> <span class="token string">"./output_restart_trcrst"</span>          <span class="token comment">!  directory to which to write output passive tracer restarts</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在<strong>file_def_nemo.xml</strong>文件中</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>file_definition</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>multiple_file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>output_time/@expname@_@freq@_@startdate@_@enddate@<span class="token punctuation">"</span></span> <span class="token attr-name">sync_freq</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1mo<span class="token punctuation">"</span></span> <span class="token attr-name">min_digits</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>mesh_mask文件 和 ocean_output文件无法更改输出目录，除非修改NEMO源代码</p>
+<h3 id="7-2-部分参数的作用"><a href="#7-2-部分参数的作用" class="headerlink" title="7.2 部分参数的作用"></a>7.2 部分参数的作用</h3><pre class="line-numbers language-fortran" data-language="fortran"><code class="language-fortran"><span class="token comment">! 在namelist_cfg文件中，调整分辨率</span>
+<span class="token comment">! jpiglo, jpjglo参数不应该出现在该文件中，不用调整</span>
+nn_GYRE     <span class="token operator">=</span>    <span class="token number">25</span>     <span class="token comment">!  GYRE resolution [1/degrees] 。分辨率（度）的倒数</span>
+ln_bench    <span class="token operator">=</span> <span class="token boolean">.true.</span>   <span class="token comment">!  ! =T benchmark with gyre: the gridsize is kept constant。将NEMO用于作为Benchmark</span>
+jpkglo      <span class="token operator">=</span>    <span class="token number">31</span>     <span class="token comment">!  number of model levels。模拟时的模型层数或深度</span>
+rn_Dt      <span class="token operator">=</span>   <span class="token number">7200.</span>    <span class="token comment">!  time step for the dynamics。设置模拟的时间步长</span>
+
+
+<span class="token comment">! 在namelist_ref文件中，调整用于MPI并行计算的网格点，将两个参数设置为0使得系统自动调整网格</span>
+jpni        <span class="token operator">=</span>   <span class="token number">0</span>       <span class="token comment">!  number of processors following i (set automatically if &lt; 1), see also ln_listonly = T</span>
+jpnj        <span class="token operator">=</span>   <span class="token number">0</span>       <span class="token comment">!  number of processors following j (set automatically if &lt; 1), see also ln_listonly = T</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>模型运行的信息在 ocean.output 文件中，通过该文件展示的信息来判断应该用多少MPI进程</p>
+<p><strong>References:</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Antonio</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/">https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Antonio</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/HPC/">
+                                    <span class="chip bg-color">HPC</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/">
+                                    <span class="chip bg-color">工作负载</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                                    <span class="chip bg-color">分布式</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">环境搭建</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/04/06/huan-ying-shi-yong-hexo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="欢迎使用Hexo">
+                        
+                        <span class="card-title">欢迎使用Hexo</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Antonio
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/04/02/intellij-idea-chang-yong-kuai-jie-jian-yi-lan-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IntelliJ IDEA 常用快捷键一览表">
+                        
+                        <span class="card-title">IntelliJ IDEA 常用快捷键一览表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文介绍了 IntelliJ IDEA 中常用的一些快捷键
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IDE/">
+                        <span class="chip bg-color">IDE</span>
+                    </a>
+                    
+                    <a href="/tags/IntelliJ-IDEA/">
+                        <span class="chip bg-color">IntelliJ IDEA</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                        <span class="chip bg-color">快捷键</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Antonio<br />'
+            + '文章作者: Antonio<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '版权声明：本文为博主「AntonioZC666」的原创文章，遵循CC 4.0 BY-SA版权协议，任何形式的转载均请附上原文出处链接及本声明。<br>主页链接：https://github.com/AntonioZC666';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<script src="js/line.js"></script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8153102324"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2024</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Antonio</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">2.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/AntonioZC666" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:AntonioZC666@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
