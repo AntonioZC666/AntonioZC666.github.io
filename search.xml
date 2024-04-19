@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>【sysbench】OLTP基准测试使用</title>
+      <link href="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/"/>
+      <url>/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>MySQL版本：8.0.36</p><p>sysbench版本：1.0.20</p><p>操作的数据库名称：sysbench_test</p></blockquote><h1 id="1、创建sysbench-oltp测试的基础配置文件"><a href="#1、创建sysbench-oltp测试的基础配置文件" class="headerlink" title="1、创建sysbench oltp测试的基础配置文件"></a>1、创建sysbench oltp测试的基础配置文件</h1><p>一般使用sysbench测试MySQL性能的命令会很长，如以下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --threads<span class="token operator">=</span><span class="token number">16</span> --time<span class="token operator">=</span><span class="token number">60</span> --report-interval<span class="token operator">=</span><span class="token number">1</span> oltp_common.lua --mysql-host<span class="token operator">=</span>localhost --mysql-port<span class="token operator">=</span><span class="token number">3306</span> --mysql-user<span class="token operator">=</span>root --mysql-db<span class="token operator">=</span>sysbench_test --tables<span class="token operator">=</span><span class="token number">4</span> --table-size<span class="token operator">=</span><span class="token number">100000</span> prepare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>需要指定很多参数。如果有配置文件的话可以简化操作。</p><p>创建基础配置文件my-sysbench.cnf，并写入一些内容（仅供参考）：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">threads</span><span class="token operator">=</span><span class="token number">160</span><span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">120</span>db-driver<span class="token operator">=</span>mysqlmysql-host<span class="token operator">=</span>localhostmysql-port<span class="token operator">=</span><span class="token number">3306</span>mysql-socket<span class="token operator">=</span>/home/czhang/mysql-8.0.36/mysql.sockmysql-user<span class="token operator">=</span>rootmysql-db<span class="token operator">=</span>sysbench_test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意：在配置文件中不要指定 tables 等选项，因为这个参数时Lua脚本的参数，不是sysbench可执行文件的参数，所以该参数要在命令行中指定。</p><p>使用sysbench测试MySQL主要有三步：<br><strong>准备测试数据—&gt;运行测试—&gt;测试数据清理</strong></p><h1 id="2、准备测试数据"><a href="#2、准备测试数据" class="headerlink" title="2、准备测试数据"></a>2、准备测试数据</h1><p>我使用8张表，每张表包含10000条数据，表名使用默认值。命令执行目录是sysbench的Lua脚本所在目录。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_common.lua prepare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>终端显示如下：<br><img src="C:\Blog\source_posts\【sysbench】OLTP基准测试使用\prepare结果显示.png" alt="prepare结果显示"></p><h1 id="3、运行测试"><a href="#3、运行测试" class="headerlink" title="3、运行测试"></a>3、运行测试</h1><h2 id="1）oltp-read-write"><a href="#1）oltp-read-write" class="headerlink" title="1）oltp_read_write"></a>1）oltp_read_write</h2><p>建议先对支持 <code>prewarm</code> 选项的 Lua 脚本使用 <code>prewarm</code> 选项，以预热数据到内存，提高性能。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_write.lua prewarm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>预热后再运行该脚本</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_write.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="2）oltp-point-select"><a href="#2）oltp-point-select" class="headerlink" title="2）oltp_point_select"></a>2）oltp_point_select</h2><pre class="line-numbers language-none"><code class="language-none">sysbench --config-file=/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables=8 --table-size=10000 oltp_point_select.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="3）oltp-write-only"><a href="#3）oltp-write-only" class="headerlink" title="3）oltp_write_only"></a>3）oltp_write_only</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_write_only.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="4）oltp-read-only"><a href="#4）oltp-read-only" class="headerlink" title="4）oltp_read_only"></a>4）oltp_read_only</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_only.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>……</p><p>还有一些脚本没有运行，把命令行中的脚本名称替换即可。</p><h1 id="4、清理数据"><a href="#4、清理数据" class="headerlink" title="4、清理数据"></a>4、清理数据</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_common.lua cleanup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>注意：</strong>清理数据时除了将prepare改成cleanup，其他全都得一样</p><p><strong>Reference：</strong></p><p><a href="https://blog.csdn.net/wudi53433927/article/details/136946422">sysbench oltp测试示例</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> 工作负载 </tag>
+            
+            <tag> sysbench </tag>
+            
+            <tag> 基准测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux普通用户无root权限安装MySQL 8.0.36</title>
       <link href="/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/"/>
       <url>/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/</url>
@@ -25,25 +56,6 @@
             <tag> 工作负载 </tag>
             
             <tag> 环境搭建 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>欢迎使用Hexo</title>
-      <link href="/2024/04/06/huan-ying-shi-yong-hexo/"/>
-      <url>/2024/04/06/huan-ying-shi-yong-hexo/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
             
         </tags>
       
@@ -104,6 +116,25 @@
             <tag> IntelliJ IDEA </tag>
             
             <tag> 快捷键 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>欢迎使用Hexo</title>
+      <link href="/2024/04/01/huan-ying-shi-yong-hexo/"/>
+      <url>/2024/04/01/huan-ying-shi-yong-hexo/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
             
         </tags>
       

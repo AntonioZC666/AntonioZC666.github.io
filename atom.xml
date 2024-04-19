@@ -6,7 +6,7 @@
   <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
   
   <link href="https://antoniozc666.github.io/"/>
-  <updated>2024-04-17T07:26:51.194Z</updated>
+  <updated>2024-04-19T12:38:17.562Z</updated>
   <id>https://antoniozc666.github.io/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【sysbench】OLTP基准测试使用</title>
+    <link href="https://antoniozc666.github.io/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/"/>
+    <id>https://antoniozc666.github.io/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/</id>
+    <published>2024-04-19T09:25:34.000Z</published>
+    <updated>2024-04-19T12:38:17.562Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;MySQL版本：8.0.36&lt;/p&gt;
+&lt;p&gt;sysbench版本：1.0.20&lt;/p&gt;
+&lt;p&gt;操作的数据库名称：sysbench_test&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="系统性能优化" scheme="https://antoniozc666.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+    <category term="MySQL" scheme="https://antoniozc666.github.io/tags/MySQL/"/>
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    <category term="sysbench" scheme="https://antoniozc666.github.io/tags/sysbench/"/>
+    
+    <category term="基准测试" scheme="https://antoniozc666.github.io/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux普通用户无root权限安装MySQL 8.0.36</title>
     <link href="https://antoniozc666.github.io/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/"/>
     <id>https://antoniozc666.github.io/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/</id>
     <published>2024-04-17T06:32:14.000Z</published>
-    <updated>2024-04-17T07:26:51.194Z</updated>
+    <updated>2024-04-19T12:50:16.107Z</updated>
     
     
       
@@ -48,29 +84,6 @@
     <category term="工作负载" scheme="https://antoniozc666.github.io/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
     
     <category term="环境搭建" scheme="https://antoniozc666.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>欢迎使用Hexo</title>
-    <link href="https://antoniozc666.github.io/2024/04/06/huan-ying-shi-yong-hexo/"/>
-    <id>https://antoniozc666.github.io/2024/04/06/huan-ying-shi-yong-hexo/</id>
-    <published>2024-04-06T03:00:45.316Z</published>
-    <updated>2024-04-06T03:00:26.634Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Hexo" scheme="https://antoniozc666.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -131,6 +144,29 @@
     <category term="IntelliJ IDEA" scheme="https://antoniozc666.github.io/tags/IntelliJ-IDEA/"/>
     
     <category term="快捷键" scheme="https://antoniozc666.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎使用Hexo</title>
+    <link href="https://antoniozc666.github.io/2024/04/01/huan-ying-shi-yong-hexo/"/>
+    <id>https://antoniozc666.github.io/2024/04/01/huan-ying-shi-yong-hexo/</id>
+    <published>2024-04-01T04:00:00.000Z</published>
+    <updated>2024-04-17T07:36:01.533Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="https://antoniozc666.github.io/tags/Hexo/"/>
     
   </entry>
   
