@@ -541,7 +541,7 @@ mysql-db<span class="token operator">=</span>sysbench_test
 <h1 id="2、准备测试数据"><a href="#2、准备测试数据" class="headerlink" title="2、准备测试数据"></a>2、准备测试数据</h1><p>我使用8张表，每张表包含10000条数据，表名使用默认值。命令执行目录是sysbench的Lua脚本所在目录。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_common.lua prepare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>终端显示如下：<br><img src="C:\Blog\source_posts\【sysbench】OLTP基准测试使用\prepare结果显示.png" alt="prepare结果显示"></p>
+<p>终端显示如下：<br><img src="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/prepare%E7%BB%93%E6%9E%9C%E6%98%BE%E7%A4%BA.png" alt="prepare结果显示"></p>
 <h1 id="3、运行测试"><a href="#3、运行测试" class="headerlink" title="3、运行测试"></a>3、运行测试</h1><h2 id="1）oltp-read-write"><a href="#1）oltp-read-write" class="headerlink" title="1）oltp_read_write"></a>1）oltp_read_write</h2><p>建议先对支持 <code>prewarm</code> 选项的 Lua 脚本使用 <code>prewarm</code> 选项，以预热数据到内存，提高性能。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_write.lua prewarm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
