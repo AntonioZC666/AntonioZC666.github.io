@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> 工作负载 </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> 工作负载 </tag>
             
             <tag> sysbench </tag>
             
@@ -51,11 +51,11 @@
       
         <tags>
             
+            <tag> MySQL </tag>
+            
             <tag> 工作负载 </tag>
             
             <tag> 环境搭建 </tag>
-            
-            <tag> MySQL </tag>
             
         </tags>
       
@@ -80,13 +80,13 @@
       
         <tags>
             
-            <tag> HPC </tag>
-            
             <tag> 工作负载 </tag>
             
-            <tag> 分布式 </tag>
-            
             <tag> 环境搭建 </tag>
+            
+            <tag> HPC </tag>
+            
+            <tag> 分布式 </tag>
             
         </tags>
       
