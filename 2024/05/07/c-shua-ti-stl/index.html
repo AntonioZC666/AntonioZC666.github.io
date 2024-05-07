@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="欢迎使用Hexo, 系统性能, 软硬件协同优化, Java">
+    <meta name="keywords" content="C++刷题STL, 系统性能, 软硬件协同优化, Java">
     <meta name="description" content="Antonio的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>欢迎使用Hexo | Antonio</title>
+    <title>C++刷题STL | Antonio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">欢迎使用Hexo</h1>
+                    <h1 class="description center-align post-title">C++刷题STL</h1>
                 </div>
             </div>
         </div>
@@ -434,14 +434,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">小知识</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
+                                小知识
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -450,28 +467,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-01
+                    2024-05-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-17
+                    2024-05-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -494,19 +511,440 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="C-之刷题常用STL容器整理"><a href="#C-之刷题常用STL容器整理" class="headerlink" title="C++之刷题常用STL容器整理"></a>C++之刷题常用STL容器整理</h1><h1 id="1-vector"><a href="#1-vector" class="headerlink" title="1.vector"></a>1.vector</h1><p>动态数组，方便的动态扩容，方便的变量初始化（int类型默认初始化为0，bool默认初始化为false），可以用来实现邻接表（结点数太多的图）。</p>
+<p>头文件</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//typename 可以是基本数据类型，可以是其它标准stl容器，可以是自定义结构体</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">typename</span><span class="token operator">&gt;</span> name<span class="token punctuation">;</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> v1<span class="token punctuation">;</span>
+vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token operator">&gt;</span> v2<span class="token punctuation">;</span> <span class="token comment">//两个维度都是动态的</span>
+vector<span class="token operator">&lt;</span>student<span class="token operator">&gt;</span> <span class="token function">v3</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//一维固定为10，二维动态</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>元素访问</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//1.下标访问</span>
+v<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token comment">//2.迭代器访问</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">typename</span><span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span>iterator it<span class="token punctuation">;</span>
+<span class="token keyword">auto</span> it<span class="token punctuation">;</span><span class="token comment">//另一种迭代器简易定义方法</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> it <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">!=</span>v<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">++</span><span class="token punctuation">)</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token operator">*</span>it<span class="token punctuation">;</span>
+<span class="token comment">//迭代器it可以进行算术运算</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push_back(x);</td>
+<td>将元素x添加到容器末尾</td>
+</tr>
+<tr>
+<td>pop_back();</td>
+<td>删除容器末尾元素</td>
+</tr>
+<tr>
+<td>size();</td>
+<td>获取容器大小</td>
+</tr>
+<tr>
+<td>clear();</td>
+<td>清空元素</td>
+</tr>
+<tr>
+<td>insert(it,x);</td>
+<td>在it处插入一个元素x</td>
+</tr>
+<tr>
+<td>erase(it);</td>
+<td>删除it处的元素</td>
+</tr>
+<tr>
+<td>erase(first,last);</td>
+<td>删除[first,last)区间内的元素</td>
+</tr>
+</tbody></table>
+<p>使用场景</p>
+<ul>
+<li>元素个数不确定</li>
+<li>用于实现邻接表存储图</li>
+</ul>
+<h1 id="2-set"><a href="#2-set" class="headerlink" title="2.set"></a>2.set</h1><p>内部自动有序且不含重复元素的集合。</p>
+<p>头文件</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;set&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>定义</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">set<span class="token operator">&lt;</span>typename<span class="token operator">&gt;</span> name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>元素访问</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> it <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">!=</span>v<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">++</span><span class="token punctuation">)</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token operator">*</span>it<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>insert(x);</td>
+<td>将元素x插入set容器中，并自动递增排序和去重</td>
+</tr>
+<tr>
+<td>find(value);</td>
+<td>查找值为value的元素，返回对应迭代器</td>
+</tr>
+<tr>
+<td>erase(it);</td>
+<td>删除it处的元素，通常结合find函数使用</td>
+</tr>
+<tr>
+<td>erase(value);</td>
+<td>删除值为value的元素</td>
+</tr>
+<tr>
+<td>erase(first,last);</td>
+<td>删除[first,last)区间内的元素</td>
+</tr>
+<tr>
+<td>size();</td>
+<td>返回容器大小</td>
+</tr>
+<tr>
+<td>clear();</td>
+<td>清空容器</td>
+</tr>
+</tbody></table>
+<p>使用场景：</p>
+<ul>
+<li>自动去重并按升序排序</li>
+</ul>
+<p>扩展：</p>
+<ul>
+<li>需要元素不唯一，使用multiset</li>
+<li>需要元素不排序，unordered_set（內部以散列代替了set内部的红黑树），速度比set快得多</li>
+</ul>
+<h1 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h1><p>字符串，可以替换为C语言版的字符数组（str.c_str();）。</p>
+<p>头文件</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">string str<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>内容访问</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//1.下标访问</span>
+str<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+<span class="token comment">//2.输入输出只能用cin和cout，除非转化为字符数组</span>
+
+<span class="token comment">//3.迭代器访问</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>operator+=</td>
+<td>字符串拼接</td>
+</tr>
+<tr>
+<td>compare operator</td>
+<td>按照字典序比较大小</td>
+</tr>
+<tr>
+<td>length()/size()</td>
+<td>获取字符串大小</td>
+</tr>
+<tr>
+<td>insert(pos,str);</td>
+<td>pos是int类型，表示在指定位置插入str</td>
+</tr>
+<tr>
+<td>insert(it,first,last);</td>
+<td>在it处插入[first,last)范围内的字符串</td>
+</tr>
+<tr>
+<td>erase(it);</td>
+<td>删除it处的元素</td>
+</tr>
+<tr>
+<td>erase(first,last);</td>
+<td>删除[first,last)范围内的元素</td>
+</tr>
+<tr>
+<td>erase(pos,length);</td>
+<td>删除pos位置开始的length个字符</td>
+</tr>
+<tr>
+<td>clear();</td>
+<td>清空字符串</td>
+</tr>
+<tr>
+<td>substr(pos,len);</td>
+<td>返回从pos位置开始len长度的字符串</td>
+</tr>
+<tr>
+<td>string::npos</td>
+<td>作为find函数未找到的判断依据</td>
+</tr>
+<tr>
+<td>find(str);</td>
+<td>返回str第一次出现的位置</td>
+</tr>
+<tr>
+<td>replace(pos,len,str2);</td>
+<td>从pos位置开始，长度为len的子串替换为str2</td>
+</tr>
+</tbody></table>
+<h1 id="4-map"><a href="#4-map" class="headerlink" title="4.map"></a>4.map</h1><p>将任何基本类型映射到任何基本类型（包括STL容器）。</p>
+<p>可以用于hash散列（当元素个数比较多时，不适合用数组散列，就用map）</p>
+<p>头文件及定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;map&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+map<span class="token operator">&lt;</span>typename1<span class="token punctuation">,</span>typename2<span class="token operator">&gt;</span> mp<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>元素访问</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//1.下标</span>
+mp<span class="token punctuation">[</span><span class="token char">'c'</span><span class="token punctuation">]</span>
+mp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+mp<span class="token punctuation">[</span><span class="token string">"key"</span><span class="token punctuation">]</span>
+
+<span class="token comment">//2.迭代器</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	cout<span class="token operator">&lt;&lt;</span> it<span class="token operator">-&gt;</span>first<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>it<span class="token operator">-&gt;</span>second<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>find(key);</td>
+<td>返回键为key的映射的迭代器</td>
+</tr>
+<tr>
+<td>erase(it);</td>
+<td>删除it处的元素</td>
+</tr>
+<tr>
+<td>erase(key);</td>
+<td>删除key</td>
+</tr>
+<tr>
+<td>erase(first,last);</td>
+<td>删除[first,last)区间内的元素</td>
+</tr>
+<tr>
+<td>size();</td>
+<td>返回容器大小</td>
+</tr>
+<tr>
+<td>clear();</td>
+<td>清空容器</td>
+</tr>
+</tbody></table>
+<p>使用场景：</p>
+<ul>
+<li>散列表</li>
+<li>其他映射</li>
+</ul>
+<p>扩展：</p>
+<ul>
+<li>多映射，即一个key对应多个value，使用multimap</li>
+<li>unordered_map可以替代map，内部实现使用散列代替了map内部的红黑树实现，用于处理只映射而不需要按key来排序的需求，速度快</li>
+</ul>
+<h1 id="5-queue"><a href="#5-queue" class="headerlink" title="5.queue"></a>5.queue</h1><p>队列，先进先出的容器，常用于广度优先搜索</p>
+<p>头文件及定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+queue<span class="token operator">&lt;</span><span class="token keyword">typename</span><span class="token operator">&gt;</span> name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push(x);</td>
+<td>元素x入队列</td>
+</tr>
+<tr>
+<td>front();</td>
+<td>访问队列的首元素</td>
+</tr>
+<tr>
+<td>back();</td>
+<td>访问队列的尾元素</td>
+</tr>
+<tr>
+<td>pop();</td>
+<td>队首元素出队</td>
+</tr>
+<tr>
+<td>empty();</td>
+<td>检测是否为空队列</td>
+</tr>
+<tr>
+<td>size();</td>
+<td>队列大小</td>
+</tr>
+</tbody></table>
+<p>使用场景</p>
+<ul>
+<li>广度优先搜索</li>
+</ul>
+<p><strong>另外</strong>，需要注意使用front()，back(), pop()函数前，必须判断是否为空队列（使用empty函数）</p>
+<p>扩展</p>
+<ul>
+<li>deque(double end queue,双端队列)首位皆可插入和删除</li>
+<li>priority_queue，使用堆实现的默认将当前队列最大元素置于队首的容器</li>
+</ul>
+<h1 id="6-priority-queue"><a href="#6-priority-queue" class="headerlink" title="6.priority_queue"></a>6.priority_queue</h1><p>优先队列，默认情况下是将队列中最大元素置于队首，优先级可以自定义。每次进行push(),pop()操作，底层的数据结构堆（heap）都会随时调整结构，使优先级最高的元素永远都在队首。</p>
+<p>头文件及定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+priority_queue<span class="token operator">&lt;</span><span class="token keyword">typename</span><span class="token operator">&gt;</span> name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push(x);</td>
+<td>将元素x入队</td>
+</tr>
+<tr>
+<td>top();</td>
+<td>访问队首元素</td>
+</tr>
+<tr>
+<td>pop();</td>
+<td>将队首元素出队</td>
+</tr>
+<tr>
+<td>empty();</td>
+<td>检测是否为空队列</td>
+</tr>
+<tr>
+<td>size();</td>
+<td>返回队列大小</td>
+</tr>
+</tbody></table>
+<p>优先级设定</p>
+<p>基本数据类型（int,double,char）默认数字大或者字典序大的优先级高。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">priority_queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;&gt;</span> q<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>greater表示这个数字越小，优先级越高</li>
+<li>less表示数字越大，优先级越高（默认情况）</li>
+</ul>
+<p>vector表示底层数据结构堆（heap）的容器</p>
+<p>结构体优先级设置</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">fruit</span><span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> price<span class="token punctuation">;</span>
+    <span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span> <span class="token operator">&lt;</span> <span class="token punctuation">(</span>fruit f1<span class="token punctuation">,</span>fruit f2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> f1<span class="token punctuation">.</span>price <span class="token operator">&gt;</span> f2<span class="token punctuation">.</span>price<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>f1<span class="token punctuation">,</span>f2<span class="token punctuation">,</span>f3<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    priority_queue<span class="token operator">&lt;</span>fruit<span class="token operator">&gt;</span> q<span class="token punctuation">;</span>
+    f1<span class="token punctuation">.</span>name  <span class="token operator">=</span> <span class="token string">"桃子"</span><span class="token punctuation">;</span>
+    f1<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    f2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"梨子"</span><span class="token punctuation">;</span>
+    f2<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    f3<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"苹果"</span><span class="token punctuation">;</span>
+    f3<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>f3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span> q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>price <span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>output:</p>
+<pre class="line-numbers language-none"><code class="language-none">苹果 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用场景</p>
+<p>可以用于dijkstra算法的顶点选择中</p>
+<p>注意使用top()函数之前判断队列是否为空（使用empty()函数）</p>
+<h1 id="7-stack"><a href="#7-stack" class="headerlink" title="7.stack"></a>7.stack</h1><p>栈，先进后出</p>
+<p>头文件及定义</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stack&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+stack<span class="token operator">&lt;</span><span class="token keyword">typename</span><span class="token operator">&gt;</span> name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>常用函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push(x);</td>
+<td>元素x入栈</td>
+</tr>
+<tr>
+<td>top();</td>
+<td>获取栈顶元素</td>
+</tr>
+<tr>
+<td>pop();</td>
+<td>栈顶元素出栈</td>
+</tr>
+<tr>
+<td>empty();</td>
+<td>检测stack是否为空</td>
+</tr>
+<tr>
+<td>size()；</td>
+<td>获取栈的大小</td>
+</tr>
+</tbody></table>
+<p>使用场景</p>
+<p>递归模拟，防止递归深度过深，深度优先搜索模拟。</p>
+<h1 id="8-pair"><a href="#8-pair" class="headerlink" title="8.pair"></a>8.pair</h1><p>头文件及使用</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;utility&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment">//map实现中涉及pair，使用map时自动添加了该头文件</span>
+
+pair<span class="token operator">&lt;</span>typename1<span class="token punctuation">,</span>typename2<span class="token operator">&gt;</span> name<span class="token punctuation">;</span>
+pair<span class="token operator">&lt;</span>string <span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">&gt;</span> <span class="token function">p</span><span class="token punctuation">(</span><span class="token string">"hahahah"</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">make_pair</span><span class="token punctuation">(</span><span class="token string">"haha"</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span>p<span class="token punctuation">.</span>first<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token operator">&lt;&lt;</span>p<span class="token punctuation">.</span>second<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -533,7 +971,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://antoniozc666.github.io/2024/04/01/huan-ying-shi-yong-hexo/">https://antoniozc666.github.io/2024/04/01/huan-ying-shi-yong-hexo/</a>
+                    <a href="https://antoniozc666.github.io/2024/05/07/c-shua-ti-stl/">https://antoniozc666.github.io/2024/05/07/c-shua-ti-stl/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,8 +1009,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">小知识</span>
                                 </a>
                             
                         </div>
@@ -613,54 +1059,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/04/02/intellij-idea-chang-yong-kuai-jie-jian-yi-lan-biao/">
+                <a href="/2024/05/07/c-shua-ti-stl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IntelliJ IDEA 常用快捷键一览表">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C++刷题STL">
                         
-                        <span class="card-title">IntelliJ IDEA 常用快捷键一览表</span>
+                        <span class="card-title">C++刷题STL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍了 IntelliJ IDEA 中常用的一些快捷键
+                            本文记录了使用C++语言刷算法题的常用STL，以便后续查看
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
+                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    小知识
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IDE/">
-                        <span class="chip bg-color">IDE</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/IntelliJ-IDEA/">
-                        <span class="chip bg-color">IntelliJ IDEA</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-                        <span class="chip bg-color">快捷键</span>
+                    <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">小知识</span>
                     </a>
                     
                 </div>
@@ -671,42 +1119,53 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/01/huan-ying-shi-yong-hexo/">
+                <a href="/2024/05/07/c-shua-ti-api/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="欢迎使用Hexo">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="C++刷题API">
                         
-                        <span class="card-title">欢迎使用Hexo</span>
+                        <span class="card-title">C++刷题API</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本文记录了使用C++语言刷算法题的常用API，以便后续查看
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Antonio
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    小知识
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">小知识</span>
                     </a>
                     
                 </div>
