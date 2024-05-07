@@ -474,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-19
+                    2024-05-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    570
+                    605
                 </div>
                 
 
@@ -556,6 +556,12 @@ $ <span class="token function">netstat</span> -tln <span class="token operator">
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> mysql<span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'123456'</span><span class="token punctuation">;</span>  <span class="token comment">--设置登录密码为123456</span>
 flush <span class="token keyword">privileges</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="4、退出MySQL"><a href="#4、退出MySQL" class="headerlink" title="4、退出MySQL"></a>4、退出MySQL</h1><p>可以在终端中执行以下shell命令关闭MySQL：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mysqladmin -u root <span class="token function">shutdown</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>或者在MySQL中执行SQL语句退出：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SHUTDOWN</span><span class="token punctuation">;</span> <span class="token keyword">EXIT</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -1033,7 +1039,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.1k</span>&nbsp;字
+                class="white-color">4.2k</span>&nbsp;字
             
             
             
