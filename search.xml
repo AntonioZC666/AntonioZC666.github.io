@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>二叉树遍历代码模板</title>
+      <link href="/2024/05/08/er-cha-shu-bian-li-dai-ma-mo-ban/"/>
+      <url>/2024/05/08/er-cha-shu-bian-li-dai-ma-mo-ban/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1、二叉树的定义"><a href="#1、二叉树的定义" class="headerlink" title="1、二叉树的定义"></a>1、二叉树的定义</h1><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">strcut TreeNode{    int val;    TreeNode* left;    TreeNode* right;    TreeNode(int x) : val(x),left(NULL),right(NULL){};}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="2、二叉树的遍历"><a href="#2、二叉树的遍历" class="headerlink" title="2、二叉树的遍历"></a>2、二叉树的遍历</h1><ul><li>深度优先遍历<ul><li>前序遍历（递归法，迭代法）</li><li>中序遍历（递归法，迭代法）</li><li>后序遍历（递归法，迭代法）</li></ul></li><li>广度优先遍历<ul><li>层次遍历（迭代法）</li></ul></li></ul><h2 id="前-x2F-中-x2F-后序遍历："><a href="#前-x2F-中-x2F-后序遍历：" class="headerlink" title="前/中/后序遍历："></a><strong>前/中/后序遍历：</strong></h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution{public:    // 前序遍历    void traversal(TreeNode* cur,vector&lt;int&gt;&amp; res){ // 要加&amp;        if(cur == NULL){            return;                }            res.push_back(cur-&gt;val);   // 根        traversal(cur-&gt;left,res);  // 左        traversal(cur-&gt;right,res); // 右    }        // 中序遍历    void traversal(TreeNode* cur, vector&lt;int&gt;&amp; vec) {        if (cur == NULL){            return;        }        traversal(cur-&gt;left, vec);  // 左        vec.push_back(cur-&gt;val);    // 根        traversal(cur-&gt;right, vec); // 右    }        // 后序遍历    void traversal(TreeNode* cur, vector&lt;int&gt;&amp; vec) {        if (cur == NULL){            return;        }        traversal(cur-&gt;left, vec);  // 左        traversal(cur-&gt;right, vec); // 右        vec.push_back(cur-&gt;val);    // 根    }        vector&lt;int&gt; PreorderTraversal(TreeNode* root){        vector&lt;int&gt; res;        traversal(root,res);        return res;    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="层序遍历："><a href="#层序遍历：" class="headerlink" title="层序遍历："></a><strong>层序遍历：</strong></h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {public:    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) {        queue&lt;TreeNode*&gt; q;        vector&lt;vector&lt;int&gt;&gt; res;        if(root != nullptr){            q.push(root);        }        while(!q.empty()){            vector&lt;int&gt; temp;            int size = q.size(); // 存放这一层节点个数            for(int i = 0;i &lt; size;i++){                TreeNode* p = q.front();                q.pop();                temp.push_back(p-&gt;val);                if(p-&gt;left != nullptr){                    q.push(p-&gt;left);                }                if(p-&gt;right != nullptr){                    q.push(p-&gt;right);                }            }            res.push_back(temp);        }        return res;    }};// 输入：root = [3,9,20,null,null,15,7]    输出：[[3],[9,20],[15,7]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>二叉树节点的<strong>深度</strong>：指从<strong>根节点</strong>到<strong>该节点</strong>的最长简单路径边的条数。</li><li>二叉树节点的<strong>高度</strong>：指从<strong>该节点</strong>到<strong>叶子节点</strong>的最长简单路径边的条数。</li></ul><p>求<strong>深度</strong>可以从上到下去查，所以需要<strong>前序遍历</strong>（根左右），而<strong>高度</strong>需要从下到上去查，所以要<strong>后序遍历</strong>（左右根）</p><h1 id="3、二叉搜索树（二叉排序树）"><a href="#3、二叉搜索树（二叉排序树）" class="headerlink" title="3、二叉搜索树（二叉排序树）"></a>3、二叉搜索树（二叉排序树）</h1><p>遇到在<strong>二叉搜索树（二叉排序树）</strong>上求什么<strong>最值</strong>，求<strong>差值</strong>之类的，都要思考一下二叉搜索树可是<strong>有序的</strong>，要利用好这一特点</p><p>如果递归函数有返回值，如何区分要搜索一条边，还是搜索整个树：</p><p><strong>搜索一条边的写法：</strong></p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">if (递归函数(root-&gt;left)) return ;if (递归函数(root-&gt;right)) return ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><strong>搜索整个树写法：</strong></p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">left = 递归函数(root-&gt;left);right = 递归函数(root-&gt;right);left与right的逻辑处理;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>选择什么遍历顺序:</strong></p><ul><li>涉及到二叉树的构造，无论普通二叉树还是二叉搜索树一定前序，都是先构造中节点。</li><li>求普通二叉树的属性，一般是后序，一般要通过递归函数的返回值做计算。(具体问题具体分析)也有用前序的</li><li>求二叉搜索树的属性，一定是中序了，要不白瞎了有序性了。</li></ul><p><img src="/2024/05/08/er-cha-shu-bian-li-dai-ma-mo-ban/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E5%BD%92%E7%BA%B3.png" alt="二叉树相关知识归纳"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 树 </tag>
+            
+            <tag> 二叉树 </tag>
+            
+            <tag> 二叉树的遍历 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++刷题STL</title>
       <link href="/2024/05/07/c-shua-ti-stl/"/>
       <url>/2024/05/07/c-shua-ti-stl/</url>
@@ -129,7 +158,7 @@
       
       <categories>
           
-          <category> 系统性能优化 </category>
+          <category> 工作负载 </category>
           
       </categories>
       
@@ -160,7 +189,7 @@
       
       <categories>
           
-          <category> 系统性能优化 </category>
+          <category> 工作负载 </category>
           
       </categories>
       
@@ -189,7 +218,7 @@
       
       <categories>
           
-          <category> 系统性能优化 </category>
+          <category> 工作负载 </category>
           
       </categories>
       
