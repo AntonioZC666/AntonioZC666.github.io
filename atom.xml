@@ -6,7 +6,7 @@
   <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
   
   <link href="https://antoniozc666.github.io/"/>
-  <updated>2024-05-08T06:43:08.911Z</updated>
+  <updated>2024-05-19T07:15:40.494Z</updated>
   <id>https://antoniozc666.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux环境下使用TPC-H测试MySQL教程</title>
+    <link href="https://antoniozc666.github.io/2024/05/19/linux-huan-jing-xia-shi-yong-tpc-h-ce-shi-mysql-jiao-cheng/"/>
+    <id>https://antoniozc666.github.io/2024/05/19/linux-huan-jing-xia-shi-yong-tpc-h-ce-shi-mysql-jiao-cheng/</id>
+    <published>2024-05-19T05:13:34.000Z</published>
+    <updated>2024-05-19T07:15:40.494Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;TPC-H介绍&quot;&gt;&lt;a href=&quot;#TPC-H介绍&quot; class=&quot;headerlink&quot; title=&quot;TPC-H介绍&quot;&gt;&lt;/a&gt;TPC-H介绍&lt;/h1&gt;&lt;p&gt;TPC-H 是 TPC（Transaction Processing Performance</summary>
+        
+      
+    
+    
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/categories/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    
+    <category term="MySQL" scheme="https://antoniozc666.github.io/tags/MySQL/"/>
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    <category term="环境搭建" scheme="https://antoniozc666.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="TPC-H" scheme="https://antoniozc666.github.io/tags/TPC-H/"/>
+    
+    <category term="安装教程" scheme="https://antoniozc666.github.io/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉树遍历代码模板</title>
