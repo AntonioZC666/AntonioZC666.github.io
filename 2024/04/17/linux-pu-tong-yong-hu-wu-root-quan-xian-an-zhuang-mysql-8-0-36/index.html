@@ -474,21 +474,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-08
+                    2024-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    605
+                    810
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -566,6 +566,40 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 
 
 <p>至此，MySQL安装完成</p>
+<h1 id="五、常用MySQL命令"><a href="#五、常用MySQL命令" class="headerlink" title="五、常用MySQL命令"></a>五、常用MySQL命令</h1><p>使用sysbench对MySQL进行基准测试时可能用得上的MySQL命令：</p>
+<h2 id="1-查看指定数据库的容量大小"><a href="#1-查看指定数据库的容量大小" class="headerlink" title="1 查看指定数据库的容量大小"></a>1 查看指定数据库的容量大小</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">SUM</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token keyword">AS</span> total_size_bytes<span class="token punctuation">,</span>CONCAT<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token function">SUM</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">' MB'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> total_size_mb <span class="token keyword">FROM</span> information_schema<span class="token punctuation">.</span><span class="token keyword">TABLES</span> <span class="token keyword">WHERE</span> table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示结果示例如下：<br><img src="/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%B9%E9%87%8F%E5%A4%A7%E5%B0%8F.png" alt="数据库容量大小"></p>
+<h2 id="2-查看指定数据库中各表的大小"><a href="#2-查看指定数据库中各表的大小" class="headerlink" title="2 查看指定数据库中各表的大小"></a>2 查看指定数据库中各表的大小</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> table_name<span class="token punctuation">,</span>data_length <span class="token operator">+</span> index_length <span class="token keyword">AS</span> size_bytes<span class="token punctuation">,</span>CONCAT<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">' MB'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> size_mb <span class="token keyword">FROM</span> information_schema<span class="token punctuation">.</span><span class="token keyword">TABLES</span> <span class="token keyword">WHERE</span> table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> size_bytes <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示结果示例如下：</p>
+<p><img src="/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%84%E8%A1%A8%E5%A4%A7%E5%B0%8F.png" alt="数据库各表大小"></p>
+<h2 id="3-查看数据库各表中的记录数量"><a href="#3-查看数据库各表中的记录数量" class="headerlink" title="3 查看数据库各表中的记录数量"></a>3 查看数据库各表中的记录数量</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> 
+     t1<span class="token punctuation">.</span>table_name<span class="token punctuation">,</span> 
+     <span class="token keyword">COALESCE</span><span class="token punctuation">(</span>t2<span class="token punctuation">.</span>row_count<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> record_count
+<span class="token keyword">FROM</span> 
+     information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> t1
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span> 
+        table_name<span class="token punctuation">,</span> 
+        table_rows <span class="token keyword">AS</span> row_count
+    <span class="token keyword">FROM</span> 
+        information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> 
+    <span class="token keyword">WHERE</span> 
+        table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token operator">AND</span> table_type <span class="token operator">=</span> <span class="token string">'BASE TABLE'</span>
+<span class="token punctuation">)</span> t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>table_name <span class="token operator">=</span> t2<span class="token punctuation">.</span>table_name
+<span class="token keyword">WHERE</span> 
+     t1<span class="token punctuation">.</span>table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token operator">AND</span> t1<span class="token punctuation">.</span>table_type <span class="token operator">=</span> <span class="token string">'BASE TABLE'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>显示结果示例如下：</p>
+<p><img src="/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%84%E8%A1%A8%E8%AE%B0%E5%BD%95%E6%95%B0%E5%A4%A7%E5%B0%8F.png" alt="数据库各表记录数大小"></p>
+<h1 id="六、常用cmd命令"><a href="#六、常用cmd命令" class="headerlink" title="六、常用cmd命令"></a>六、常用cmd命令</h1><p>显示包含“mysql”的进程</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> -eo pid,psr,user,cmd <span class="token operator">|</span> <span class="token function">grep</span> mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+
 <p><strong>Reference</strong>：</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenkx6/p/13366638.html">1</a></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1583129">2</a></p>
@@ -1039,7 +1073,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.1k</span>&nbsp;字
+                class="white-color">11.3k</span>&nbsp;字
             
             
             
