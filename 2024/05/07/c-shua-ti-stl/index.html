@@ -474,7 +474,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-07
+                    2024-05-19
                 </div>
                 
 
@@ -511,7 +511,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="C-之刷题常用STL容器整理"><a href="#C-之刷题常用STL容器整理" class="headerlink" title="C++之刷题常用STL容器整理"></a>C++之刷题常用STL容器整理</h1><h1 id="1-vector"><a href="#1-vector" class="headerlink" title="1.vector"></a>1.vector</h1><p>动态数组，方便的动态扩容，方便的变量初始化（int类型默认初始化为0，bool默认初始化为false），可以用来实现邻接表（结点数太多的图）。</p>
+                <h1 id="C-之刷题常用STL容器整理"><a href="#C-之刷题常用STL容器整理" class="headerlink" title="C++之刷题常用STL容器整理"></a>C++之刷题常用STL容器整理</h1><h2 id="1-vector"><a href="#1-vector" class="headerlink" title="1.vector"></a>1.vector</h2><p>动态数组，方便的动态扩容，方便的变量初始化（int类型默认初始化为0，bool默认初始化为false），可以用来实现邻接表（结点数太多的图）。</p>
 <p>头文件</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -575,7 +575,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">typena
 <li>元素个数不确定</li>
 <li>用于实现邻接表存储图</li>
 </ul>
-<h1 id="2-set"><a href="#2-set" class="headerlink" title="2.set"></a>2.set</h1><p>内部自动有序且不含重复元素的集合。</p>
+<h2 id="2-set"><a href="#2-set" class="headerlink" title="2.set"></a>2.set</h2><p>内部自动有序且不含重复元素的集合。</p>
 <p>头文件</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;set&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -633,7 +633,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">typena
 <li>需要元素不唯一，使用multiset</li>
 <li>需要元素不排序，unordered_set（內部以散列代替了set内部的红黑树），速度比set快得多</li>
 </ul>
-<h1 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h1><p>字符串，可以替换为C语言版的字符数组（str.c_str();）。</p>
+<h2 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h2><p>字符串，可以替换为C语言版的字符数组（str.c_str();）。</p>
 <p>头文件</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -710,7 +710,7 @@ str<span class="token punctuation">[</span>i<span class="token punctuation">]</s
 <td>从pos位置开始，长度为len的子串替换为str2</td>
 </tr>
 </tbody></table>
-<h1 id="4-map"><a href="#4-map" class="headerlink" title="4.map"></a>4.map</h1><p>将任何基本类型映射到任何基本类型（包括STL容器）。</p>
+<h2 id="4-map"><a href="#4-map" class="headerlink" title="4.map"></a>4.map</h2><p>将任何基本类型映射到任何基本类型（包括STL容器）。</p>
 <p>可以用于hash散列（当元素个数比较多时，不适合用数组散列，就用map）</p>
 <p>头文件及定义</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;map&gt;</span></span>
@@ -771,7 +771,7 @@ mp<span class="token punctuation">[</span><span class="token string">"key"</span
 <li>多映射，即一个key对应多个value，使用multimap</li>
 <li>unordered_map可以替代map，内部实现使用散列代替了map内部的红黑树实现，用于处理只映射而不需要按key来排序的需求，速度快</li>
 </ul>
-<h1 id="5-queue"><a href="#5-queue" class="headerlink" title="5.queue"></a>5.queue</h1><p>队列，先进先出的容器，常用于广度优先搜索</p>
+<h2 id="5-queue"><a href="#5-queue" class="headerlink" title="5.queue"></a>5.queue</h2><p>队列，先进先出的容器，常用于广度优先搜索</p>
 <p>头文件及定义</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -821,7 +821,7 @@ queue<span class="token operator">&lt;</span><span class="token keyword">typenam
 <li>deque(double end queue,双端队列)首位皆可插入和删除</li>
 <li>priority_queue，使用堆实现的默认将当前队列最大元素置于队首的容器</li>
 </ul>
-<h1 id="6-priority-queue"><a href="#6-priority-queue" class="headerlink" title="6.priority_queue"></a>6.priority_queue</h1><p>优先队列，默认情况下是将队列中最大元素置于队首，优先级可以自定义。每次进行push(),pop()操作，底层的数据结构堆（heap）都会随时调整结构，使优先级最高的元素永远都在队首。</p>
+<h2 id="6-priority-queue"><a href="#6-priority-queue" class="headerlink" title="6.priority_queue"></a>6.priority_queue</h2><p>优先队列，默认情况下是将队列中最大元素置于队首，优先级可以自定义。每次进行push(),pop()操作，底层的数据结构堆（heap）都会随时调整结构，使优先级最高的元素永远都在队首。</p>
 <p>头文件及定义</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;queue&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -898,7 +898,7 @@ priority_queue<span class="token operator">&lt;</span><span class="token keyword
 <p>使用场景</p>
 <p>可以用于dijkstra算法的顶点选择中</p>
 <p>注意使用top()函数之前判断队列是否为空（使用empty()函数）</p>
-<h1 id="7-stack"><a href="#7-stack" class="headerlink" title="7.stack"></a>7.stack</h1><p>栈，先进后出</p>
+<h2 id="7-stack"><a href="#7-stack" class="headerlink" title="7.stack"></a>7.stack</h2><p>栈，先进后出</p>
 <p>头文件及定义</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stack&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -936,7 +936,7 @@ stack<span class="token operator">&lt;</span><span class="token keyword">typenam
 </tbody></table>
 <p>使用场景</p>
 <p>递归模拟，防止递归深度过深，深度优先搜索模拟。</p>
-<h1 id="8-pair"><a href="#8-pair" class="headerlink" title="8.pair"></a>8.pair</h1><p>头文件及使用</p>
+<h2 id="8-pair"><a href="#8-pair" class="headerlink" title="8.pair"></a>8.pair</h2><p>头文件及使用</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;utility&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token comment">//map实现中涉及pair，使用map时自动添加了该头文件</span>

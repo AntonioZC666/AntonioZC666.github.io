@@ -474,7 +474,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-08
+                    2024-05-19
                 </div>
                 
 
@@ -511,14 +511,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1、二叉树的定义"><a href="#1、二叉树的定义" class="headerlink" title="1、二叉树的定义"></a>1、二叉树的定义</h1><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">strcut TreeNode{
+                <h2 id="1、二叉树的定义"><a href="#1、二叉树的定义" class="headerlink" title="1、二叉树的定义"></a>1、二叉树的定义</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">strcut TreeNode{
     int val;
     TreeNode* left;
     TreeNode* right;
     TreeNode(int x) : val(x),left(NULL),right(NULL){};
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="2、二叉树的遍历"><a href="#2、二叉树的遍历" class="headerlink" title="2、二叉树的遍历"></a>2、二叉树的遍历</h1><ul>
+<h2 id="2、二叉树的遍历"><a href="#2、二叉树的遍历" class="headerlink" title="2、二叉树的遍历"></a>2、二叉树的遍历</h2><ul>
 <li>深度优先遍历<ul>
 <li>前序遍历（递归法，迭代法）</li>
 <li>中序遍历（递归法，迭代法）</li>
@@ -530,7 +530,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="前-x2F-中-x2F-后序遍历："><a href="#前-x2F-中-x2F-后序遍历：" class="headerlink" title="前/中/后序遍历："></a><strong>前/中/后序遍历：</strong></h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution{
+<h3 id="前-x2F-中-x2F-后序遍历："><a href="#前-x2F-中-x2F-后序遍历：" class="headerlink" title="前/中/后序遍历："></a><strong>前/中/后序遍历：</strong></h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution{
 public:
     // 前序遍历
     void traversal(TreeNode* cur,vector&lt;int&gt;&amp; res){ // 要加&amp;
@@ -569,7 +569,7 @@ public:
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="层序遍历："><a href="#层序遍历：" class="headerlink" title="层序遍历："></a><strong>层序遍历：</strong></h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
+<h3 id="层序遍历："><a href="#层序遍历：" class="headerlink" title="层序遍历："></a><strong>层序遍历：</strong></h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
 public:
     vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) {
         queue&lt;TreeNode*&gt; q;
@@ -605,7 +605,7 @@ public:
 <li>二叉树节点的<strong>高度</strong>：指从<strong>该节点</strong>到<strong>叶子节点</strong>的最长简单路径边的条数。</li>
 </ul>
 <p>求<strong>深度</strong>可以从上到下去查，所以需要<strong>前序遍历</strong>（根左右），而<strong>高度</strong>需要从下到上去查，所以要<strong>后序遍历</strong>（左右根）</p>
-<h1 id="3、二叉搜索树（二叉排序树）"><a href="#3、二叉搜索树（二叉排序树）" class="headerlink" title="3、二叉搜索树（二叉排序树）"></a>3、二叉搜索树（二叉排序树）</h1><p>遇到在<strong>二叉搜索树（二叉排序树）</strong>上求什么<strong>最值</strong>，求<strong>差值</strong>之类的，都要思考一下二叉搜索树可是<strong>有序的</strong>，要利用好这一特点</p>
+<h2 id="3、二叉搜索树（二叉排序树）"><a href="#3、二叉搜索树（二叉排序树）" class="headerlink" title="3、二叉搜索树（二叉排序树）"></a>3、二叉搜索树（二叉排序树）</h2><p>遇到在<strong>二叉搜索树（二叉排序树）</strong>上求什么<strong>最值</strong>，求<strong>差值</strong>之类的，都要思考一下二叉搜索树可是<strong>有序的</strong>，要利用好这一特点</p>
 <p>如果递归函数有返回值，如何区分要搜索一条边，还是搜索整个树：</p>
 <p><strong>搜索一条边的写法：</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">if (递归函数(root-&gt;left)) return ;
