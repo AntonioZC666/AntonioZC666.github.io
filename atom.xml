@@ -6,7 +6,7 @@
   <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
   
   <link href="https://antoniozc666.github.io/"/>
-  <updated>2024-05-19T07:35:50.919Z</updated>
+  <updated>2024-05-31T08:39:12.424Z</updated>
   <id>https://antoniozc666.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu22.04安装OpenFOAM_v2212</title>
+    <link href="https://antoniozc666.github.io/2024/05/31/ubuntu22-04-an-zhuang-openfoam-v2212/"/>
+    <id>https://antoniozc666.github.io/2024/05/31/ubuntu22-04-an-zhuang-openfoam-v2212/</id>
+    <published>2024-05-31T06:02:13.000Z</published>
+    <updated>2024-05-31T08:39:12.424Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;0、环境准备&quot;&gt;&lt;a href=&quot;#0、环境准备&quot; class=&quot;headerlink&quot; title=&quot;0、环境准备&quot;&gt;&lt;/a&gt;0、环境准备&lt;/h2&gt;&lt;p&gt;该并行应用程序需要使用</summary>
+        
+      
+    
+    
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/categories/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    
+    <category term="工作负载" scheme="https://antoniozc666.github.io/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/"/>
+    
+    <category term="环境搭建" scheme="https://antoniozc666.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="HPC" scheme="https://antoniozc666.github.io/tags/HPC/"/>
+    
+    <category term="OpenFOAM" scheme="https://antoniozc666.github.io/tags/OpenFOAM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决远程连接时VSCode与独立终端环境不一致问题</title>
+    <link href="https://antoniozc666.github.io/2024/05/30/jie-jue-yuan-cheng-lian-jie-shi-vscode-yu-du-li-zhong-duan-huan-jing-bu-yi-zhi-wen-ti/"/>
+    <id>https://antoniozc666.github.io/2024/05/30/jie-jue-yuan-cheng-lian-jie-shi-vscode-yu-du-li-zhong-duan-huan-jing-bu-yi-zhi-wen-ti/</id>
+    <published>2024-05-30T13:03:45.000Z</published>
+    <updated>2024-05-30T13:21:27.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、问题描述&quot;&gt;&lt;a href=&quot;#一、问题描述&quot; class=&quot;headerlink&quot; title=&quot;一、问题描述&quot;&gt;&lt;/a&gt;一、问题描述&lt;/h2&gt;&lt;p&gt;本人平常使用vscode作为开发工具远程连接服务器。但是有时在 &lt;code&gt;.bashrc&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://antoniozc666.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDE" scheme="https://antoniozc666.github.io/tags/IDE/"/>
+    
+    <category term="vscode" scheme="https://antoniozc666.github.io/tags/vscode/"/>
+    
+    <category term="SSH" scheme="https://antoniozc666.github.io/tags/SSH/"/>
+    
+    <category term="debug" scheme="https://antoniozc666.github.io/tags/debug/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux环境下使用TPC-H测试MySQL教程</title>
@@ -271,7 +333,7 @@
     <link href="https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/"/>
     <id>https://antoniozc666.github.io/2024/04/02/nemo-hai-yang-mo-xing-de-an-zhuang-da-jian-yu-yun-xing/</id>
     <published>2024-04-02T10:53:47.000Z</published>
-    <updated>2024-05-08T06:48:04.589Z</updated>
+    <updated>2024-05-31T08:39:25.688Z</updated>
     
     
       
