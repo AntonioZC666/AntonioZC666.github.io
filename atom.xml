@@ -6,7 +6,7 @@
   <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
   
   <link href="https://antoniozc666.github.io/"/>
-  <updated>2024-06-02T07:07:00.106Z</updated>
+  <updated>2024-08-29T07:31:48.198Z</updated>
   <id>https://antoniozc666.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习模型训练全过程</title>
+    <link href="https://antoniozc666.github.io/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/"/>
+    <id>https://antoniozc666.github.io/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/</id>
+    <published>2024-08-29T04:22:25.000Z</published>
+    <updated>2024-08-29T07:31:48.198Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文记录学习深度学习模型训练的流程，包括：数据准备、定义并调用模型、训练模型、评估模型、保存模型、测试模型等&lt;/p&gt;
+&lt;h2 id=&quot;1-环境准备&quot;&gt;&lt;a href=&quot;#1-环境准备&quot; class=&quot;headerlink&quot; title=&quot;1. 环境准备&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://antoniozc666.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://antoniozc666.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Notion常用快捷键</title>
