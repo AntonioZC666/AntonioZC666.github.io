@@ -6,7 +6,7 @@
   <link href="https://antoniozc666.github.io/atom.xml" rel="self"/>
   
   <link href="https://antoniozc666.github.io/"/>
-  <updated>2024-08-29T07:34:09.738Z</updated>
+  <updated>2024-08-31T13:42:14.988Z</updated>
   <id>https://antoniozc666.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>卷积、池化计算</title>
+    <link href="https://antoniozc666.github.io/2024/08/31/juan-ji-chi-hua-ji-suan/"/>
+    <id>https://antoniozc666.github.io/2024/08/31/juan-ji-chi-hua-ji-suan/</id>
+    <published>2024-08-31T12:42:20.000Z</published>
+    <updated>2024-08-31T13:42:14.988Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;要设计卷积神经网络的结构，必须&lt;strong&gt;匹配层与层之间的输入与输出的尺寸&lt;/strong&gt;，这就需要较好的计算输出尺寸&lt;/p&gt;
+&lt;h2 id=&quot;1-卷积&quot;&gt;&lt;a href=&quot;#1-卷积&quot; class=&quot;headerlink&quot; title=&quot;1. 卷积&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://antoniozc666.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习基础" scheme="https://antoniozc666.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="卷积" scheme="https://antoniozc666.github.io/tags/%E5%8D%B7%E7%A7%AF/"/>
+    
+    <category term="池化" scheme="https://antoniozc666.github.io/tags/%E6%B1%A0%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深度学习模型训练全过程</title>
     <link href="https://antoniozc666.github.io/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/"/>
     <id>https://antoniozc666.github.io/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/</id>
     <published>2024-08-29T04:22:25.000Z</published>
-    <updated>2024-08-29T07:34:09.738Z</updated>
+    <updated>2024-08-31T13:42:29.676Z</updated>
     
     
       
@@ -38,7 +68,9 @@
     <category term="深度学习" scheme="https://antoniozc666.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://antoniozc666.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习基础" scheme="https://antoniozc666.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="模型训练" scheme="https://antoniozc666.github.io/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   

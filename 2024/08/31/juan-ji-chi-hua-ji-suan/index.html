@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【sysbench】OLTP基准测试使用, 系统性能, 软硬件协同优化, Java">
+    <meta name="keywords" content="卷积、池化计算, 系统性能, 软硬件协同优化, Java">
     <meta name="description" content="Antonio的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【sysbench】OLTP基准测试使用 | Antonio</title>
+    <title>卷积、池化计算 | Antonio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【sysbench】OLTP基准测试使用</h1>
+                    <h1 class="description center-align post-title">卷积、池化计算</h1>
                 </div>
             </div>
         </div>
@@ -434,20 +434,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">深度学习基础</span>
                             </a>
                         
-                            <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/">
-                                <span class="chip bg-color">工作负载</span>
+                            <a href="/tags/%E5%8D%B7%E7%A7%AF/">
+                                <span class="chip bg-color">卷积</span>
                             </a>
                         
-                            <a href="/tags/sysbench/">
-                                <span class="chip bg-color">sysbench</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">基准测试</span>
+                            <a href="/tags/%E6%B1%A0%E5%8C%96/">
+                                <span class="chip bg-color">池化</span>
                             </a>
                         
                     </div>
@@ -458,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/" class="post-category">
-                                工作负载
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                深度学习
                             </a>
                         
                     </div>
@@ -471,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-19
+                    2024-08-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-19
+                    2024-08-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    877
                 </div>
                 
 
@@ -515,86 +511,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>MySQL版本：8.0.36</p>
-<p>sysbench版本：1.0.20</p>
-<p>操作的数据库名称：sysbench_test</p>
-</blockquote>
-<h2 id="1、创建sysbench-oltp测试的基础配置文件"><a href="#1、创建sysbench-oltp测试的基础配置文件" class="headerlink" title="1、创建sysbench oltp测试的基础配置文件"></a>1、创建sysbench oltp测试的基础配置文件</h2><p>一般使用sysbench测试MySQL性能的命令会很长，如以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --threads<span class="token operator">=</span><span class="token number">16</span> --time<span class="token operator">=</span><span class="token number">60</span> --report-interval<span class="token operator">=</span><span class="token number">1</span> oltp_common.lua --mysql-host<span class="token operator">=</span>localhost --mysql-port<span class="token operator">=</span><span class="token number">3306</span> --mysql-user<span class="token operator">=</span>root --mysql-db<span class="token operator">=</span>sysbench_test --tables<span class="token operator">=</span><span class="token number">4</span> --table-size<span class="token operator">=</span><span class="token number">100000</span> prepare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>要设计卷积神经网络的结构，必须<strong>匹配层与层之间的输入与输出的尺寸</strong>，这就需要较好的计算输出尺寸</p>
+<h2 id="1-卷积"><a href="#1-卷积" class="headerlink" title="1. 卷积"></a>1. 卷积</h2><p>卷积层的作用是<strong>提取输入图片中的信息，这些信息被称为图像特征</strong>，这些特征是由图像中的每个像素通过组合或者独立的方式所体现，比如图片的纹理特征，颜色特征。</p>
+<p>卷积层有很多卷积核，通过做越来越多的卷积，提取到的图像特征会越来越抽象。</p>
+<p>卷积后，图像尺寸计算公式为：**(图像大小 - 卷积核大小 + 2<em>填充值) / 步长 + 1</em>*</p>
+<p>即：</p>
+<p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E5%8D%B7%E7%A7%AF%E5%85%AC%E5%BC%8F.png"></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">其中：
+N：输出矩阵的大小，N x N
+W：输入图片的大小，W x W
+K：卷积核kernel_size大小，K x K
+P：填充值padding大小
+S：步长stride大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>需要指定很多参数。如果有配置文件的话可以简化操作。</p>
-<p>创建基础配置文件my-sysbench.cnf，并写入一些内容（仅供参考）：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">threads</span><span class="token operator">=</span><span class="token number">160</span>
-<span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">120</span>
+<p>以resnet50为例，输入为[1, 3, 224, 224]，其中1为 batchsize，3为通道数，224为height和width。</p>
+<p>经过第一层卷积后，其大小为[1,64,112,112]</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">in_channels<span class="token operator">=</span> <span class="token number">3</span>   <span class="token operator">//</span>输入通道，RGB图像作为输入时channels为<span class="token number">3</span>
+out_channels<span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">//</span>输出通道
+nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-db-driver<span class="token operator">=</span>mysql
-mysql-host<span class="token operator">=</span>localhost
-mysql-port<span class="token operator">=</span><span class="token number">3306</span>
-mysql-socket<span class="token operator">=</span>/home/czhang/mysql-8.0.36/mysql.sock
-mysql-user<span class="token operator">=</span>root
-mysql-db<span class="token operator">=</span>sysbench_test
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>N = (W − K + 2P ) / S + 1 = (224 - 7 + 2 x 3) / 2 + 1 = 112</p>
+<p><strong>对矩阵和公式的理解：</strong></p>
+<p>1为batchsize，不改变。<br>对于通道数，会生成与设定的输出通道个数相同个数的卷积核，对图片进行卷积，即<strong>卷积核的个数等于输出特征图的通道数</strong>。<br>得到最终输出大小为[1,64,112,112]<br>(W − K + 2P )相当于计算除了第一次卷积后剩下的可用来卷积的大小<br>(W − K + 2P ) / S为按照S大小的步长在刚刚得到的大小上可以向后移动多少次，即：还可以做几次卷积<br>因为不包括第一次卷积，所以再加上一个1，<br>即N = (W − K + 2P )/S+1<br>输出大小 = （图片宽或高 - 卷积核大小 + padding大小）/ 步长 + 1<br>对于宽和高不同的图片可分别用上述公式计算，得到最终的输出大小</p>
+<p>卷积动态图解参考：<br><a target="_blank" rel="noopener" href="https://cs231n.github.io/assets/conv-demo/index.html">https://cs231n.github.io/assets/conv-demo/index.html</a></p>
+<h2 id="2-池化"><a href="#2-池化" class="headerlink" title="2. 池化"></a>2. 池化</h2><p>池化层的作用是对卷积层中提取的特征进行挑选，分为<strong>最大池化</strong>和<strong>平均池化</strong>，就是对所有相应位置的数求<strong>最大</strong>或<strong>平均值</strong>，一般用来将高和宽降维。而1*1卷积中的降维降的是通道数的维度。</p>
+<p>最大池化：Max Pooling，取窗口内的最大值作为输出</p>
+<p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E6%9C%80%E5%A4%A7%E6%B1%A0%E5%8C%96.png"></p>
+<p>平均池化：Avg Pooling，去窗口内所有值的平均值作为输出</p>
+<p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E5%B9%B3%E5%9D%87%E6%B1%A0%E5%8C%96.png"></p>
+<p>池化后，图像尺寸的计算公式为：**(图像大小 - 池化核大小 + 2<em>填充值) / 步长 + 1</em>*</p>
+<p>即：</p>
+<p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E6%B1%A0%E5%8C%96%E5%85%AC%E5%BC%8F.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">其中：
+N：输出矩阵的大小，N x N
+W：输入图片的大小，W x W
+K：池化核kernel_size大小，K x K
+P：填充值padding大小。池化一般不使用填充padding。
+S：步长stride大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>注意：在配置文件中不要指定 tables 等选项，因为这个参数时Lua脚本的参数，不是sysbench可执行文件的参数，所以该参数要在命令行中指定。</p>
-<p>使用sysbench测试MySQL主要有三步：<br><strong>准备测试数据—&gt;运行测试—&gt;测试数据清理</strong></p>
-<h2 id="2、准备测试数据"><a href="#2、准备测试数据" class="headerlink" title="2、准备测试数据"></a>2、准备测试数据</h2><p>我使用8张表，每张表包含10000条数据，表名使用默认值。命令执行目录是sysbench的Lua脚本所在目录。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_common.lua prepare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>池化会对特征进行降维，但是<strong>不会改变通道数</strong></p>
+<p>示例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+<span class="token comment"># 四维分别对应：(batch_size,channel,H,W)</span>
+im <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">)</span>
+<span class="token comment"># 卷积核为3*3，步长为2，上下左右各填充1行</span>
+c <span class="token operator">=</span> nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+output <span class="token operator">=</span> c<span class="token punctuation">(</span>im<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"原张量尺寸："</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>im<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"经最大池化处理后的张量尺寸："</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>终端显示如下：<br><img src="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/prepare%E7%BB%93%E6%9E%9C%E6%98%BE%E7%A4%BA.png" alt="prepare结果显示"></p>
-<h2 id="3、运行测试"><a href="#3、运行测试" class="headerlink" title="3、运行测试"></a>3、运行测试</h2><h3 id="1）oltp-read-write"><a href="#1）oltp-read-write" class="headerlink" title="1）oltp_read_write"></a>1）oltp_read_write</h3><p>建议先对支持 <code>prewarm</code> 选项的 Lua 脚本使用 <code>prewarm</code> 选项，以预热数据到内存，提高性能。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_write.lua prewarm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>预热后再运行该脚本</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_write.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="2）oltp-point-select"><a href="#2）oltp-point-select" class="headerlink" title="2）oltp_point_select"></a>2）oltp_point_select</h3><pre class="line-numbers language-none"><code class="language-none">sysbench --config-file=/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables=8 --table-size=10000 oltp_point_select.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="3）oltp-write-only"><a href="#3）oltp-write-only" class="headerlink" title="3）oltp_write_only"></a>3）oltp_write_only</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_write_only.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="4）oltp-read-only"><a href="#4）oltp-read-only" class="headerlink" title="4）oltp_read_only"></a>4）oltp_read_only</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_read_only.lua run<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>……</p>
-<p>还有一些脚本没有运行，把命令行中的脚本名称替换即可。</p>
-<h2 id="4、清理数据"><a href="#4、清理数据" class="headerlink" title="4、清理数据"></a>4、清理数据</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sysbench --config-file<span class="token operator">=</span>/home/czhang/mysql-8.0.36/my-sysbench.cnf --tables<span class="token operator">=</span><span class="token number">8</span> --table-size<span class="token operator">=</span><span class="token number">10000</span> oltp_common.lua cleanup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>注意：</strong>清理数据时除了将prepare改成cleanup，其他全都得一样</p>
-<h2 id="5、常用MySQL命令"><a href="#5、常用MySQL命令" class="headerlink" title="5、常用MySQL命令"></a>5、常用MySQL命令</h2><p>使用sysbench对MySQL进行基准测试时可能用得上的MySQL命令：</p>
-<h3 id="5-1-查看指定数据库的容量大小"><a href="#5-1-查看指定数据库的容量大小" class="headerlink" title="5.1 查看指定数据库的容量大小"></a>5.1 查看指定数据库的容量大小</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">SUM</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token keyword">AS</span> total_size_bytes<span class="token punctuation">,</span>CONCAT<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token function">SUM</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">' MB'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> total_size_mb <span class="token keyword">FROM</span> information_schema<span class="token punctuation">.</span><span class="token keyword">TABLES</span> <span class="token keyword">WHERE</span> table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>显示结果示例如下：<br><img src="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/Blog\source_posts\数据库容量大小.png"></p>
-<h3 id="5-2-查看指定数据库中各表的大小"><a href="#5-2-查看指定数据库中各表的大小" class="headerlink" title="5.2 查看指定数据库中各表的大小"></a>5.2 查看指定数据库中各表的大小</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> table_name<span class="token punctuation">,</span>data_length <span class="token operator">+</span> index_length <span class="token keyword">AS</span> size_bytes<span class="token punctuation">,</span>CONCAT<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data_length <span class="token operator">+</span> index_length<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">' MB'</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> size_mb <span class="token keyword">FROM</span> information_schema<span class="token punctuation">.</span><span class="token keyword">TABLES</span> <span class="token keyword">WHERE</span> table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> size_bytes <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>显示结果示例如下：</p>
-<p><img src="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%84%E8%A1%A8%E5%A4%A7%E5%B0%8F.png" alt="数据库各表大小"></p>
-<h3 id="5-3-查看数据库各表中的记录数量"><a href="#5-3-查看数据库各表中的记录数量" class="headerlink" title="5.3 查看数据库各表中的记录数量"></a>5.3 查看数据库各表中的记录数量</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> 
-     t1<span class="token punctuation">.</span>table_name<span class="token punctuation">,</span> 
-     <span class="token keyword">COALESCE</span><span class="token punctuation">(</span>t2<span class="token punctuation">.</span>row_count<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> record_count
-<span class="token keyword">FROM</span> 
-     information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> t1
-<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> <span class="token punctuation">(</span>
-    <span class="token keyword">SELECT</span> 
-        table_name<span class="token punctuation">,</span> 
-        table_rows <span class="token keyword">AS</span> row_count
-    <span class="token keyword">FROM</span> 
-        information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> 
-    <span class="token keyword">WHERE</span> 
-        table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token operator">AND</span> table_type <span class="token operator">=</span> <span class="token string">'BASE TABLE'</span>
-<span class="token punctuation">)</span> t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>table_name <span class="token operator">=</span> t2<span class="token punctuation">.</span>table_name
-<span class="token keyword">WHERE</span> 
-     t1<span class="token punctuation">.</span>table_schema <span class="token operator">=</span> <span class="token string">'sysbench_test'</span> <span class="token operator">AND</span> t1<span class="token punctuation">.</span>table_type <span class="token operator">=</span> <span class="token string">'BASE TABLE'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>显示结果示例如下：</p>
-<p><img src="/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%84%E8%A1%A8%E8%AE%B0%E5%BD%95%E6%95%B0%E5%A4%A7%E5%B0%8F.png"></p>
-<h2 id="6、常用cmd命令"><a href="#6、常用cmd命令" class="headerlink" title="6、常用cmd命令"></a>6、常用cmd命令</h2><p>显示包含“mysql”的进程</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> -eo pid,psr,user,cmd <span class="token operator">|</span> <span class="token function">grep</span> mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
-
-<p><strong>Reference：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wudi53433927/article/details/136946422">sysbench oltp测试示例</a></p>
+<p>原张量尺寸为：[1, 64, 112, 112]</p>
+<p>池化后张量尺寸为：[1, 64, 56, 56]</p>
 
                 
             </div>
@@ -621,7 +591,7 @@ mysql-db<span class="token operator">=</span>sysbench_test
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://antoniozc666.github.io/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/">https://antoniozc666.github.io/2024/04/19/sysbench-oltp-ji-zhun-ce-shi-shi-yong/</a>
+                    <a href="https://antoniozc666.github.io/2024/08/31/juan-ji-chi-hua-ji-suan/">https://antoniozc666.github.io/2024/08/31/juan-ji-chi-hua-ji-suan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -659,20 +629,16 @@ mysql-db<span class="token operator">=</span>sysbench_test
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">深度学习基础</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/">
-                                    <span class="chip bg-color">工作负载</span>
+                                <a href="/tags/%E5%8D%B7%E7%A7%AF/">
+                                    <span class="chip bg-color">卷积</span>
                                 </a>
                             
-                                <a href="/tags/sysbench/">
-                                    <span class="chip bg-color">sysbench</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">基准测试</span>
+                                <a href="/tags/%E6%B1%A0%E5%8C%96/">
+                                    <span class="chip bg-color">池化</span>
                                 </a>
                             
                         </div>
@@ -713,54 +679,56 @@ mysql-db<span class="token operator">=</span>sysbench_test
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/05/07/er-fen-suan-fa-mo-ban/">
+                <a href="/2024/08/31/juan-ji-chi-hua-ji-suan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="二分算法模板">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="卷积、池化计算">
                         
-                        <span class="card-title">二分算法模板</span>
+                        <span class="card-title">卷积、池化计算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文记录了二分算法的模板以便后续查看
+                            本文记录卷积和池化计算的原理和计算公式
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">二分算法</span>
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">深度学习基础</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86/">
-                        <span class="chip bg-color">整数二分</span>
+                    <a href="/tags/%E5%8D%B7%E7%A7%AF/">
+                        <span class="chip bg-color">卷积</span>
                     </a>
                     
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/">
-                        <span class="chip bg-color">浮点数二分</span>
+                    <a href="/tags/%E6%B1%A0%E5%8C%96/">
+                        <span class="chip bg-color">池化</span>
                     </a>
                     
                 </div>
@@ -774,31 +742,31 @@ mysql-db<span class="token operator">=</span>sysbench_test
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/17/linux-pu-tong-yong-hu-wu-root-quan-xian-an-zhuang-mysql-8-0-36/">
+                <a href="/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux普通用户无root权限安装MySQL 8.0.36">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="深度学习模型训练全过程">
                         
-                        <span class="card-title">Linux普通用户无root权限安装MySQL 8.0.36</span>
+                        <span class="card-title">深度学习模型训练全过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本文记录学习深度学习模型训练的流程，包括：数据准备、定义并调用模型、训练模型、评估模型、保存模型、测试模型等
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/" class="post-category">
-                                    工作负载
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
                                 </a>
                             
                             
@@ -808,16 +776,12 @@ mysql-db<span class="token operator">=</span>sysbench_test
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">深度学习基础</span>
                     </a>
                     
-                    <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%BD%BD/">
-                        <span class="chip bg-color">工作负载</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">环境搭建</span>
+                    <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">
+                        <span class="chip bg-color">模型训练</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>卷积、池化计算</title>
+      <link href="/2024/08/31/juan-ji-chi-hua-ji-suan/"/>
+      <url>/2024/08/31/juan-ji-chi-hua-ji-suan/</url>
+      
+        <content type="html"><![CDATA[<p>要设计卷积神经网络的结构，必须<strong>匹配层与层之间的输入与输出的尺寸</strong>，这就需要较好的计算输出尺寸</p><h2 id="1-卷积"><a href="#1-卷积" class="headerlink" title="1. 卷积"></a>1. 卷积</h2><p>卷积层的作用是<strong>提取输入图片中的信息，这些信息被称为图像特征</strong>，这些特征是由图像中的每个像素通过组合或者独立的方式所体现，比如图片的纹理特征，颜色特征。</p><p>卷积层有很多卷积核，通过做越来越多的卷积，提取到的图像特征会越来越抽象。</p><p>卷积后，图像尺寸计算公式为：**(图像大小 - 卷积核大小 + 2<em>填充值) / 步长 + 1</em>*</p><p>即：</p><p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E5%8D%B7%E7%A7%AF%E5%85%AC%E5%BC%8F.png"></p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">其中：N：输出矩阵的大小，N x NW：输入图片的大小，W x WK：卷积核kernel_size大小，K x KP：填充值padding大小S：步长stride大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>以resnet50为例，输入为[1, 3, 224, 224]，其中1为 batchsize，3为通道数，224为height和width。</p><p>经过第一层卷积后，其大小为[1,64,112,112]</p><pre class="line-numbers language-python" data-language="python"><code class="language-python">in_channels<span class="token operator">=</span> <span class="token number">3</span>   <span class="token operator">//</span>输入通道，RGB图像作为输入时channels为<span class="token number">3</span>out_channels<span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">//</span>输出通道nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>N = (W − K + 2P ) / S + 1 = (224 - 7 + 2 x 3) / 2 + 1 = 112</p><p><strong>对矩阵和公式的理解：</strong></p><p>1为batchsize，不改变。<br>对于通道数，会生成与设定的输出通道个数相同个数的卷积核，对图片进行卷积，即<strong>卷积核的个数等于输出特征图的通道数</strong>。<br>得到最终输出大小为[1,64,112,112]<br>(W − K + 2P )相当于计算除了第一次卷积后剩下的可用来卷积的大小<br>(W − K + 2P ) / S为按照S大小的步长在刚刚得到的大小上可以向后移动多少次，即：还可以做几次卷积<br>因为不包括第一次卷积，所以再加上一个1，<br>即N = (W − K + 2P )/S+1<br>输出大小 = （图片宽或高 - 卷积核大小 + padding大小）/ 步长 + 1<br>对于宽和高不同的图片可分别用上述公式计算，得到最终的输出大小</p><p>卷积动态图解参考：<br><a href="https://cs231n.github.io/assets/conv-demo/index.html">https://cs231n.github.io/assets/conv-demo/index.html</a></p><h2 id="2-池化"><a href="#2-池化" class="headerlink" title="2. 池化"></a>2. 池化</h2><p>池化层的作用是对卷积层中提取的特征进行挑选，分为<strong>最大池化</strong>和<strong>平均池化</strong>，就是对所有相应位置的数求<strong>最大</strong>或<strong>平均值</strong>，一般用来将高和宽降维。而1*1卷积中的降维降的是通道数的维度。</p><p>最大池化：Max Pooling，取窗口内的最大值作为输出</p><p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E6%9C%80%E5%A4%A7%E6%B1%A0%E5%8C%96.png"></p><p>平均池化：Avg Pooling，去窗口内所有值的平均值作为输出</p><p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E5%B9%B3%E5%9D%87%E6%B1%A0%E5%8C%96.png"></p><p>池化后，图像尺寸的计算公式为：**(图像大小 - 池化核大小 + 2<em>填充值) / 步长 + 1</em>*</p><p>即：</p><p><img src="/2024/08/31/juan-ji-chi-hua-ji-suan/%E6%B1%A0%E5%8C%96%E5%85%AC%E5%BC%8F.png"></p><pre class="line-numbers language-none"><code class="language-none">其中：N：输出矩阵的大小，N x NW：输入图片的大小，W x WK：池化核kernel_size大小，K x KP：填充值padding大小。池化一般不使用填充padding。S：步长stride大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>池化会对特征进行降维，但是<strong>不会改变通道数</strong></p><p>示例：</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn<span class="token comment"># 四维分别对应：(batch_size,channel,H,W)</span>im <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">)</span><span class="token comment"># 卷积核为3*3，步长为2，上下左右各填充1行</span>c <span class="token operator">=</span> nn<span class="token punctuation">.</span>MaxPool2d<span class="token punctuation">(</span>kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>output <span class="token operator">=</span> c<span class="token punctuation">(</span>im<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"原张量尺寸："</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>im<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"经最大池化处理后的张量尺寸："</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原张量尺寸为：[1, 64, 112, 112]</p><p>池化后张量尺寸为：[1, 64, 56, 56]</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习基础 </tag>
+            
+            <tag> 卷积 </tag>
+            
+            <tag> 池化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深度学习模型训练全过程</title>
       <link href="/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/"/>
       <url>/2024/08/29/shen-du-xue-xi-mo-xing-xun-lian-quan-guo-cheng/</url>
@@ -20,7 +49,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
+            <tag> 深度学习基础 </tag>
+            
+            <tag> 模型训练 </tag>
             
         </tags>
       
